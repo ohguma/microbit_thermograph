@@ -29,6 +29,23 @@
 - [GROVE - 超音波距離センサモジュール](https://www.switch-science.com/products/1383)
     - ボタン操作を非接触にするために利用。
 
+## その他ハードウェア関連
+- [タミヤ ユニバーサルプレートL（210×160mm）](https://www.tamiya.com/japan/products/70172/index.html)に各部品を実装。
+- 下記を3Dプリンタで召喚した。
+    - [theamo.stl](cad/theamo.stl)　LEDテープの上に乗せる枠。枠内で光を拡散させる。
+    - [grove_wrap_a.stl](cad/grove_wrap_a.stl)　AMG8833を載せたGroveプロトシールド用ケースのトップ側
+    - [grove_wrap_b.stl](cad/grove_wrap_b.stl)　AMG8833を載せたGroveプロトシールド用ケースのボトム側
+    - [grove_us.stl](cad/grove_us.stl)　超音波センサ用の取り付け台
+
+- LEDテープに載せた枠と光の拡散について。
+    - <img src="document/IMG_5785.jpg">　枠だけ。LEDが直接見えると眩しい。 
+    - <img src="document/IMG_5786.jpg">　枠にダイソーのPP版を載せた場合。
+    - <img src="document/IMG_5787.jpg">　枠にトレーシングペーパーを載せた場合。
+    - <img src="document/IMG_5788.jpg">　枠にPP板とトレーシングペーパーの載せた場合。
+    - <img src="document/IMG_5827.jpg">　超音波センサ台。はめ込み式。
+- [動画](document/IMG_5837.MOV)
+
+
 
 ## 2019年の作成当時の記事など
 - 2019-12-31 Qiita 
