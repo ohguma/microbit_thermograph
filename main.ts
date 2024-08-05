@@ -6,53 +6,45 @@
 // https://www.switch-science.com/catalog/3395/
 // 
 // スイッチサイエンス版 同モジュール用ライブラリを参考にした。
-// 
 // 0x68h=104(10)
-// 
 // 0x1f 0x50=31 80
-// 
 // 0x1f 0x45=31 75
-// 
 // 0x1f 0x57=31 87
-// 
 // 0x07 0x20= 7 32
-// 
 // 0x1f 0x00=31  0
 // 
 // LEDテープはN状でなく、U状に接続し、テープ間の導線を短くする。
-// 
 // LED　8x8=64個の計測値を表示する。
+// ０-１-２-３-４-５-６-７┐
+// ┌15-14-13-12-11-10-９-８┘
+// └16-17-18-19-20-…(省)
 // 
 // 青：20度、赤：30度　（色相を変更）
-// 
 // 31度以上は  白：35度　（再度を変更）
-// 
 // 19度以下は　黒：10度　（輝度を変更）
 // 
 // Aボタンで左右反転。
-// 
 // LED表示が◇：センサがLED側
-// 
 // LED表示が×：センサが裏側
 // 
 // Bボタンで最後に測定した温度の最大・最小値を表示
-function displayTemp() {
+function displayTemp () {
     serial.writeLine("saikou.<NUMK VAL=" + TEMP_MAX + ">do..saitei.<NUMK VAL=" + TEMP_MIN + ">do.")
     basic.clearScreen()
     basic.showString("MAX=" + TEMP_MAX + " MIN=" + TEMP_MIN)
 }
-function write8(REG: number, DAT: number) {
+function write8 (REG: number, DAT: number) {
     pins.i2cWriteNumber(
-        AMG88_ADDR,
-        REG,
-        NumberFormat.UInt8BE,
-        true
+    AMG88_ADDR,
+    REG,
+    NumberFormat.UInt8BE,
+    true
     )
     pins.i2cWriteNumber(
-        AMG88_ADDR,
-        DAT,
-        NumberFormat.UInt8BE,
-        false
+    AMG88_ADDR,
+    DAT,
+    NumberFormat.UInt8BE,
+    false
     )
 }
 input.onButtonPressed(Button.A, function () {
@@ -67,7 +59,7 @@ input.onButtonPressed(Button.B, function () {
     displayTemp()
     displayDir2()
 })
-function displayDir2() {
+function displayDir2 () {
     basic.clearScreen()
     if (センサ向きがLED側 == 1) {
         basic.showIcon(IconNames.Diamond)
@@ -94,9 +86,9 @@ let LED_TAPE = neopixel.create(DigitalPin.P0, 64, NeoPixelMode.RGB)
 LED_TAPE.show()
 センサ向きがLED側 = 1
 serial.redirect(
-    SerialPin.P1,
-    SerialPin.P15,
-    BaudRate.BaudRate9600
+SerialPin.P1,
+SerialPin.P15,
+BaudRate.BaudRate9600
 )
 AMG88_ADDR = 104
 write8(31, 80)
@@ -109,9 +101,9 @@ let 近接開始時刻 = input.runningTime()
 serial.writeLine("ma'ikurobi'xtuto sa-mogurafu.")
 basic.forever(function () {
     if (sonar.ping(
-        DigitalPin.P2,
-        DigitalPin.P2,
-        PingUnit.Centimeters
+    DigitalPin.P2,
+    DigitalPin.P2,
+    PingUnit.Centimeters
     ) > 15) {
         近接開始時刻 = input.runningTime()
     }
@@ -124,10 +116,10 @@ basic.forever(function () {
     TEMP_MIN_SUB = 512
     TEMP_MAX_SUB = -512
     pins.i2cWriteNumber(
-        AMG88_ADDR,
-        128,
-        NumberFormat.UInt8LE,
-        true
+    AMG88_ADDR,
+    128,
+    NumberFormat.UInt8LE,
+    true
     )
     for (let CNT_Y = 0; CNT_Y <= 7; CNT_Y++) {
         for (let CNT_X = 0; CNT_X <= 7; CNT_X++) {
