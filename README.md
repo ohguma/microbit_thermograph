@@ -43,7 +43,7 @@
     - <img src="document/IMG_5787.jpg">　枠にトレーシングペーパーを載せた場合。
     - <img src="document/IMG_5788.jpg">　枠にPP板とトレーシングペーパーの載せた場合。
     - <img src="document/IMG_5827.jpg">　超音波センサ台。はめ込み式。
-- [動画](document/IMG_5837.MOV)
+- <video src="document/IMG_5837.MOV" height="400"></video>　動作風景
 
 
 
