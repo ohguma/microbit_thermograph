@@ -45,7 +45,6 @@
     - <img src="document/IMG_5827.jpg">　超音波センサ台。はめ込み式。
 
 - 動作状況
-    - <video src="document/talk_demo.mov" controls="true" height="600"></video>
 
 
 ## 2019年の作成当時の記事など
