@@ -45,7 +45,8 @@
     - <img src="document/IMG_5827.jpg">　超音波センサ台。はめ込み式。
 
 - 動作状況
-
+    - <video src="https://github.com/ohguma/microbit_thermograph/raw/master/document/talk_demo.mov" width="300"></video>
+    
 
 ## 2019年の作成当時の記事など
 - 2019-12-31 Qiita 
